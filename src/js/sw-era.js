@@ -7,28 +7,28 @@ console.log("container:",container);
 const eras = [
   {
     erasTitle: "Стара Республіка",
-    erasImage: "./images/old-republic.webp",
+    erasImage: "images/old-republic.webp",
     erasImageAlt: "Old Republic",
     erasDescription:
       "Епоха тисячолітніх війн між Джедаями та Сітхами, формування орденів та перших галактичних імперій",
   },
   {
     erasTitle: "Війни клонів",
-    erasImage: "./images/clone-wars.jpg",
+    erasImage: "images/clone-wars.jpg",
     erasImageAlt: "Clone Wars",
     erasDescription:
       " Галактичний конфлікт між Республікою та КНС, що призвів до падіння джедаїв і виникнення Імперії",
   },
   {
     erasTitle: "Час Імперії",
-    erasImage: "./images/galactic-empire.jpg",
+    erasImage: "images/galactic-empire.jpg",
     erasImageAlt: "Galactic Empire",
     erasDescription:
       "Правління Палпатіна, переслідування джедаїв і народження Повстанського Альянсу",
   },
   {
     erasTitle: "Нова Республіка",
-    erasImage: "./images/new-republic.jpg",
+    erasImage: "images/new-republic.jpg",
     erasImageAlt: "New Republic",
     erasDescription:
       " Період відновлення після падіння Імперії та поява Першого Ордену",
