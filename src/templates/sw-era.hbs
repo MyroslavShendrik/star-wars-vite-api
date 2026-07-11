@@ -1,0 +1,9 @@
+<ul class="sw-era-list">
+  {{#each this}}
+    <li class="sw-era sw-era--old-republic">
+      <h2 class="sw-era__title">{{this.erasTitle}}</h2>
+      <img src="{{this.erasImage}}" alt="{{this.erasImageAlt}}" />
+      <p> {{this.erasDescription}} </p>
+    </li>
+  {{/each}}
+</ul>
