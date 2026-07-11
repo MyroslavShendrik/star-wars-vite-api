@@ -4,8 +4,9 @@ import injectHTML from 'vite-plugin-html-inject'
 import FullReload from 'vite-plugin-full-reload'
 
 export default defineConfig({
-  base: '/star-wars-vite/',
+  base: '/star-wars-vite-api/',
   root: 'src',
+   publicDir: '../public', //! ❗️❗️❗️ ВАЖЛИВО: для завантаження зображень на GitHub
   build: {
     rollupOptions: {
       input: glob.sync('./src/**/*.html'),
