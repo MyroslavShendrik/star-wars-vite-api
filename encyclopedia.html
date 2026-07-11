@@ -1,155 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Персонажі – Star Wars Fan Hub</title>
-   
-  <script type="module" crossorigin src="/star-wars-vite-api/assets/encyclopedia-ff30c3c1.js"></script>
-  <link rel="modulepreload" crossorigin href="/star-wars-vite-api/assets/star-sky-dce685fe.js">
-  <link rel="stylesheet" href="/star-wars-vite-api/assets/star-sky-7e683d16.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Персонажі – Star Wars Fan Hub</title>
+    
+    <script type="module" crossorigin src="/star-wars-vite-api/assets/encyclopedia-d823b6a8.js"></script>
+    <link rel="modulepreload" crossorigin href="/star-wars-vite-api/assets/star-sky-dce685fe.js">
+    <link rel="stylesheet" href="/star-wars-vite-api/assets/star-sky-7e683d16.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-stars" id="header-stars"></div>
+      <h1 class="header__title">Star Wars Fan Hub</h1>
+      <nav>
+        <ul class="header__menu">
+          <li class="header__menu-item"><a href="index.html">Головна</a></li>
+          <li class="header__menu-item">
+            <a href="encyclopedia.html">Енциклопедія</a>
+          </li>
+          <li class="header__menu-item"><a href="shop.html">Магазин</a></li>
+        </ul>
+      </nav>
 
-<header class="header">
-    <div class="header-stars" id="header-stars"></div>
-  <h1 class="header__title">Star Wars Fan Hub</h1>
-  <nav>
-    <ul class="header__menu">
-      <li class="header__menu-item"><a href="index.html">Головна</a></li>
-      <li class="header__menu-item"><a href="encyclopedia.html">Енциклопедія</a></li>
-      <li class="header__menu-item"><a href="shop.html">Магазин</a></li>
-    </ul>
-  </nav>
+      <div class="dev-timer" id="dev-timer">
+        <h2 class="dev-timer__title">До завершення розробки залишилось:</h2>
 
+        <div class="dev-timer__clock">
+          <div class="dev-timer__item">
+            <span data-value="days">00</span>
+            <small>Днів</small>
+          </div>
 
-<div class="dev-timer" id="dev-timer">
-  <h2 class="dev-timer__title">До завершення розробки залишилось:</h2>
+          <div class="dev-timer__item">
+            <span data-value="hours">00</span>
+            <small>Годин</small>
+          </div>
 
-  <div class="dev-timer__clock">
-    <div class="dev-timer__item">
-      <span data-value="days">00</span>
-      <small>Днів</small>
-    </div>
+          <div class="dev-timer__item">
+            <span data-value="mins">00</span>
+            <small>Хвилин</small>
+          </div>
 
-    <div class="dev-timer__item">
-      <span data-value="hours">00</span>
-      <small>Годин</small>
-    </div>
+          <div class="dev-timer__item">
+            <span data-value="secs">00</span>
+            <small>Секунд</small>
+          </div>
+        </div>
+      </div>
+    </header>
 
-    <div class="dev-timer__item">
-      <span data-value="mins">00</span>
-      <small>Хвилин</small>
-    </div>
+    <main class="sw-encyclopedia">
+      <!-- ЕПОХИ -->
+      <section class="sw-era sw-era--old-republic">
+        <!-- <ul>
+          <li class="sw-era sw-era--old-republic">
+            <h2 class="sw-era__title">Стара Республіка</h2>
+            <img src="./images/old-republic.webp" alt="Old Republic" />
+            <p>
+              Епоха тисячолітніх війн між Джедаями та Сітхами, формування
+              орденів та перших галактичних імперій.
+            </p>
+          </li>
 
-    <div class="dev-timer__item">
-      <span data-value="secs">00</span>
-      <small>Секунд</small>
-    </div>
-  </div>
-</div>
-</header>
+          <li class="sw-era sw-era--clone-wars">
+            <h2 class="sw-era__title">Війни клонів</h2>
+            <img src="./images/clone-wars.jpg" alt="Clone Wars" />
+            <p>
+              Галактичний конфлікт між Республікою та КНС, що призвів до падіння
+              джедаїв і виникнення Імперії.
+            </p>
+          </li>
 
-<main class="sw-encyclopedia">
+          <li class="sw-era sw-era--empire">
+            <h2 class="sw-era__title">Час Імперії</h2>
+            <img src="./images/galactic-empire.jpg" alt="Galactic Empire" />
+            <p>
+              Правління Палпатіна, переслідування джедаїв і народження
+              Повстанського Альянсу.
+            </p>
+          </li>
 
+          <li class="sw-era sw-era--new-republic">
+            <h2 class="sw-era__title">Нова Республіка</h2>
+            <img src="./images/new-republic.jpg" alt="New Republic" width="" />
+            <p>
+              Період відновлення після падіння Імперії та поява Першого Ордену.
+            </p>
+          </li>
+        </ul> -->
+      </section>
 
-<!-- ЕПОХИ -->
-<section class="sw-era sw-era--old-republic">
-<h2 class="sw-era__title">Стара Республіка</h2>
-<img src="/star-wars-vite-api/assets/old-republic-96b570b2.webp" alt="Old Republic">
-<p>Епоха тисячолітніх війн між Джедаями та Сітхами, формування орденів та перших галактичних імперій.</p>
-</section>
+      <!-- ОРДЕНИ ТА ФРАКЦІЇ -->
+      <section class="sw-factions">
+        <h2 class="sw-section-title">Організації та ордени</h2>
 
+        <article class="sw-faction sw-faction--jedi">
+          <h3>Орден Джедаїв</h3>
+          <img src="/star-wars-vite-api/assets/Jedi-Logo-703d9a85.png" alt="Jedi Order" />
+          <p>
+            Хранителі Світлої сторони Сили, захисники миру та балансу в
+            Галактиці.
+          </p>
+        </article>
 
-<section class="sw-era sw-era--clone-wars">
-<h2 class="sw-era__title">Війни клонів</h2>
-<img src="/star-wars-vite-api/assets/clone-wars-b2af5d0e.jpg" alt="Clone Wars">
-<p>Галактичний конфлікт між Республікою та КНС, що призвів до падіння джедаїв і виникнення Імперії.</p>
-</section>
+        <article class="sw-faction sw-faction--sith">
+          <h3>Орден Сітхів</h3>
+          <img src="/star-wars-vite-api/assets/sith-logo-1040cc60.png" alt="Sith Order" />
+          <p>
+            Темні володарі Сили, що керуються гнівом, страхом і прагненням
+            абсолютної влади.
+          </p>
+        </article>
 
+        <article class="sw-faction sw-faction--cns">
+          <h3>КНС (Конфедерація Незалежних Систем)</h3>
+          <img src="/star-wars-vite-api/assets/cis-logo-2923c4d1.webp" alt="CIS" />
+          <p>
+            Альянс планет і корпорацій, який вів війну проти Республіки під
+            керівництвом Сітхів.
+          </p>
+        </article>
 
-<section class="sw-era sw-era--empire">
-<h2 class="sw-era__title">Час Імперії</h2>
-<img src="/star-wars-vite-api/assets/galactic-empire-f4211846.jpg" alt="Galactic Empire">
-<p>Правління Палпатіна, переслідування джедаїв і народження Повстанського Альянсу.</p>
-</section>
+        <article class="sw-faction sw-faction--rebels">
+          <h3>Повстанський Альянс</h3>
+          <img src="/star-wars-vite-api/assets/rebel-logo-996f4100.webp" alt="Rebel Alliance" />
+          <p>Рух опору проти тиранії Імперії, що повернув надію Галактиці.</p>
+        </article>
 
+        <article class="sw-faction sw-faction--first-order">
+          <h3>Перший Орден</h3>
+          <img src="/star-wars-vite-api/assets/first-order-logo-eaa4e531.webp" alt="First Order" />
+          <p>
+            Мілітаризована держава, спадкоємець ідеології Галактичної Імперії.
+          </p>
+        </article>
+      </section>
 
-<section class="sw-era sw-era--new-republic">
-<h2 class="sw-era__title">Нова Республіка</h2>
-<img  src="/star-wars-vite-api/assets/new-republic-61452654.jpg" alt="New Republic" width="">
-<p>Період відновлення після падіння Імперії та поява Першого Ордену.</p>
-</section>
+      <!-- ФОРМИ БОЮ -->
+      <section class="sw-lightsaber">
+        <h2 class="sw-section-title">Форми бою на світлових мечах</h2>
 
+        <ul class="forms-list">
+          <li data-form="shii-cho">Form I — Shii-Cho</li>
+          <li data-form="makashi">Form II — Makashi</li>
+          <li data-form="soresu">Form III — Soresu</li>
+          <li data-form="ataru">Form IV — Ataru</li>
+          <li data-form="djem-so">Form V — Djem So</li>
+          <li data-form="niman">Form VI — Niman</li>
+          <li data-form="juyo">Form VII — Juyo / Vaapad</li>
+        </ul>
+      </section>
 
-<!-- ОРДЕНИ ТА ФРАКЦІЇ -->
-<section class="sw-factions">
-<h2 class="sw-section-title">Організації та ордени</h2>
-
-
-<article class="sw-faction sw-faction--jedi">
-<h3>Орден Джедаїв</h3>
-<img src="/star-wars-vite-api/assets/Jedi-Logo-703d9a85.png" alt="Jedi Order">
-<p>Хранителі Світлої сторони Сили, захисники миру та балансу в Галактиці.</p>
-</article>
-
-
-<article class="sw-faction sw-faction--sith">
-<h3>Орден Сітхів</h3>
-<img src="/star-wars-vite-api/assets/sith-logo-1040cc60.png" alt="Sith Order" >
-<p>Темні володарі Сили, що керуються гнівом, страхом і прагненням абсолютної влади.</p>
-</article>
-
-
-<article class="sw-faction sw-faction--cns">
-<h3>КНС (Конфедерація Незалежних Систем)</h3>
-<img src="/star-wars-vite-api/assets/cis-logo-2923c4d1.webp" alt="CIS" >
-<p>Альянс планет і корпорацій, який вів війну проти Республіки під керівництвом Сітхів.</p>
-</article>
-
-
-<article class="sw-faction sw-faction--rebels">
-<h3>Повстанський Альянс</h3>
-<img src="/star-wars-vite-api/assets/rebel-logo-996f4100.webp" alt="Rebel Alliance" >
-<p>Рух опору проти тиранії Імперії, що повернув надію Галактиці.</p>
-</article>
-
-
-<article class="sw-faction sw-faction--first-order">
-<h3>Перший Орден</h3>
-<img src="/star-wars-vite-api/assets/first-order-logo-eaa4e531.webp" alt="First Order" >
-<p>Мілітаризована держава, спадкоємець ідеології Галактичної Імперії.</p>
-</article>
-</section>
-
-
-<!-- ФОРМИ БОЮ -->
-<section class="sw-lightsaber">
-  <h2 class="sw-section-title">Форми бою на світлових мечах</h2>
-
-  <ul class="forms-list">
-    <li data-form="shii-cho">Form I — Shii-Cho</li>
-    <li data-form="makashi">Form II — Makashi</li>
-    <li data-form="soresu">Form III — Soresu</li>
-    <li data-form="ataru">Form IV — Ataru</li>
-    <li data-form="djem-so">Form V — Djem So</li>
-    <li data-form="niman">Form VI — Niman</li>
-    <li data-form="juyo">Form VII — Juyo / Vaapad</li>
-  </ul>
-</section>
-
-
-
-<!-- ПЛАНЕТИ -->
-<section class="sw-planets">
-  <h2 class="sw-planets__title sw-section-title">
-    Відомі планети Галактики
-  </h2>
- <input type="text" id="searchPlanet" placeholder="Пошук планети..." />
- <button id="searchBtn">Знайти</button>
-  <ul class="sw-planets__list">
-
-    <!-- <li class="sw-planets__item planet-card">
+      <!-- ПЛАНЕТИ -->
+      <section class="sw-planets">
+        <h2 class="sw-planets__title sw-section-title">
+          Відомі планети Галактики
+        </h2>
+        <input type="text" id="searchPlanet" placeholder="Пошук планети..." />
+        <button id="searchBtn">Знайти</button>
+        <ul class="sw-planets__list">
+          <!-- <li class="sw-planets__item planet-card">
       <h3 class="planet-card__title">Tatooine</h3>
       <p class="planet-card__text">
         Піщана планета на краю галактики, осередок контрабандистів і мисливців за головами.
@@ -205,210 +216,244 @@
         Війн клонів.
       </p>
     </li> -->
-    <li class="sw-planets__item planet-card" data-id="1" data-name="Tatooine">Tatooine</li>
-    <li class="sw-planets__item planet-card" data-id="9" data-name="Coruscant">Coruscant</li>
-    <li class="sw-planets__item planet-card" data-id="8" data-name="Naboo">Naboo</li>
-    <li class="sw-planets__item planet-card" data-id="13" data-name="Mustafar">Mustafar</li>
-    <li class="sw-planets__item planet-card" data-id="4" data-name="Hoth">Hoth</li>
-    <li class="sw-planets__item planet-card" data-id="7" data-name="Endor">Endor</li>
-    <li class="sw-planets__item planet-card" data-id="14" data-name="Kashyyyk">Kashyyyk</li>
-  </ul>
-</section>
+          <li
+            class="sw-planets__item planet-card"
+            data-id="1"
+            data-name="Tatooine"
+          >
+            Tatooine
+          </li>
+          <li
+            class="sw-planets__item planet-card"
+            data-id="9"
+            data-name="Coruscant"
+          >
+            Coruscant
+          </li>
+          <li
+            class="sw-planets__item planet-card"
+            data-id="8"
+            data-name="Naboo"
+          >
+            Naboo
+          </li>
+          <li
+            class="sw-planets__item planet-card"
+            data-id="13"
+            data-name="Mustafar"
+          >
+            Mustafar
+          </li>
+          <li class="sw-planets__item planet-card" data-id="4" data-name="Hoth">
+            Hoth
+          </li>
+          <li
+            class="sw-planets__item planet-card"
+            data-id="7"
+            data-name="Endor"
+          >
+            Endor
+          </li>
+          <li
+            class="sw-planets__item planet-card"
+            data-id="14"
+            data-name="Kashyyyk"
+          >
+            Kashyyyk
+          </li>
+        </ul>
+      </section>
 
+      <section class="sw-characters">
+        <h2 class="sw-characters__title sw-section-title">
+          Галактичні фракції та герої
+        </h2>
 
-<section class="sw-characters">
-  <h2 class="sw-characters__title sw-section-title">
-    Галактичні фракції та герої
-  </h2>
+        <div class="sw-characters__groups">
+          <article
+            class="sw-characters__group character-group character-group--jedi"
+          >
+            <h3 class="character-group__title">Орден Джедаїв</h3>
+            <ul class="character-group__list">
+              <li class="character-group__item">Luke Skywalker</li>
+              <li class="character-group__item">Obi-Wan Kenobi</li>
+              <li class="character-group__item">Yoda</li>
+              <li class="character-group__item">Mace Windu</li>
+              <li class="character-group__item">Qui-Gon Jinn</li>
+              <li class="character-group__item">Ahsoka Tano</li>
+            </ul>
+          </article>
 
-  <div class="sw-characters__groups">
+          <article
+            class="sw-characters__group character-group character-group--sith"
+          >
+            <h3 class="character-group__title">Сітхи</h3>
+            <ul class="character-group__list">
+              <li class="character-group__item">Darth Vader</li>
+              <li class="character-group__item">Darth Sidious</li>
+              <li class="character-group__item">Darth Maul</li>
+              <li class="character-group__item">Count Dooku</li>
+              <li class="character-group__item">Kylo Ren</li>
+            </ul>
+          </article>
 
-    <article class="sw-characters__group character-group character-group--jedi">
-      <h3 class="character-group__title">Орден Джедаїв</h3>
-      <ul class="character-group__list">
-        <li class="character-group__item">Luke Skywalker</li>
-        <li class="character-group__item">Obi-Wan Kenobi</li>
-        <li class="character-group__item">Yoda</li>
-        <li class="character-group__item">Mace Windu</li>
-        <li class="character-group__item">Qui-Gon Jinn</li>
-        <li class="character-group__item">Ahsoka Tano</li>
-      </ul>
-    </article>
+          <article
+            class="sw-characters__group character-group character-group--rebels"
+          >
+            <h3 class="character-group__title">Повстанці</h3>
+            <ul class="character-group__list">
+              <li class="character-group__item">Leia Organa</li>
+              <li class="character-group__item">Han Solo</li>
+              <li class="character-group__item">Cassian Andor</li>
+              <li class="character-group__item">Mon Mothma</li>
+              <li class="character-group__item">Jyn Erso</li>
+            </ul>
+          </article>
 
-    <article class="sw-characters__group character-group character-group--sith">
-      <h3 class="character-group__title">Сітхи</h3>
-      <ul class="character-group__list">
-        <li class="character-group__item">Darth Vader</li>
-        <li class="character-group__item">Darth Sidious</li>
-        <li class="character-group__item">Darth Maul</li>
-        <li class="character-group__item">Count Dooku</li>
-        <li class="character-group__item">Kylo Ren</li>
-      </ul>
-    </article>
+          <article
+            class="sw-characters__group character-group character-group--empire"
+          >
+            <h3 class="character-group__title">Галактична Імперія</h3>
+            <ul class="character-group__list">
+              <li class="character-group__item">Grand Moff Tarkin</li>
+              <li class="character-group__item">Admiral Thrawn</li>
+              <li class="character-group__item">Imperial Inquisitors</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-    <article class="sw-characters__group character-group character-group--rebels">
-      <h3 class="character-group__title">Повстанці</h3>
-      <ul class="character-group__list">
-        <li class="character-group__item">Leia Organa</li>
-        <li class="character-group__item">Han Solo</li>
-        <li class="character-group__item">Cassian Andor</li>
-        <li class="character-group__item">Mon Mothma</li>
-        <li class="character-group__item">Jyn Erso</li>
-      </ul>
-    </article>
+      <section class="sw-movies">
+        <h2 class="sw-movies__title sw-section-title">Сага Star Wars</h2>
 
-    <article class="sw-characters__group character-group character-group--empire">
-      <h3 class="character-group__title">Галактична Імперія</h3>
-      <ul class="character-group__list">
-        <li class="character-group__item">Grand Moff Tarkin</li>
-        <li class="character-group__item">Admiral Thrawn</li>
-        <li class="character-group__item">Imperial Inquisitors</li>
-      </ul>
-    </article>
+        <ul class="sw-movies__list">
+          <li class="sw-movies__item movie-card">
+            <span class="movie-card__episode">Episode I</span>
+            <h3 class="movie-card__title">The Phantom Menace</h3>
+            <p class="movie-card__text">
+              Знайомство з молодим Енакіном і повернення Сітхів.
+            </p>
+          </li>
 
-  </div>
-</section>
+          <li class="sw-movies__item movie-card">
+            <span class="movie-card__episode">Episode II</span>
+            <h3 class="movie-card__title">Attack of the Clones</h3>
+            <p class="movie-card__text">
+              Початок Війн клонів та занепад Республіки.
+            </p>
+          </li>
 
+          <li class="sw-movies__item movie-card">
+            <span class="movie-card__episode">Episode III</span>
+            <h3 class="movie-card__title">Revenge of the Sith</h3>
+            <p class="movie-card__text">
+              Падіння Джедаїв і народження Дарта Вейдера.
+            </p>
+          </li>
 
-<section class="sw-movies">
-  <h2 class="sw-movies__title sw-section-title">Сага Star Wars</h2>
+          <li class="sw-movies__item movie-card">
+            <span class="movie-card__episode">Episode IV</span>
+            <h3 class="movie-card__title">A New Hope</h3>
+            <p class="movie-card__text">
+              Люк вступає в боротьбу проти Імперії.
+            </p>
+          </li>
 
-  <ul class="sw-movies__list">
+          <li class="sw-movies__item movie-card">
+            <span class="movie-card__episode">Episode V</span>
+            <h3 class="movie-card__title">The Empire Strikes Back</h3>
+            <p class="movie-card__text">
+              Імперія завдає нищівного удару Повстанцям.
+            </p>
+          </li>
 
-    <li class="sw-movies__item movie-card">
-      <span class="movie-card__episode">Episode I</span>
-      <h3 class="movie-card__title">The Phantom Menace</h3>
-      <p class="movie-card__text">
-        Знайомство з молодим Енакіном і повернення Сітхів.
-      </p>
-    </li>
+          <li class="sw-movies__item movie-card">
+            <span class="movie-card__episode">Episode VI</span>
+            <h3 class="movie-card__title">Return of the Jedi</h3>
+            <p class="movie-card__text">
+              Падіння Імператора та спасіння Енакіна.
+            </p>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <!-- Modal for lightsaber section -->
+    <div class="form-modal-backdrop is-hidden">
+      <div class="form-modal">
+        <button class="modal-close">✕</button>
 
-    <li class="sw-movies__item movie-card">
-      <span class="movie-card__episode">Episode II</span>
-      <h3 class="movie-card__title">Attack of the Clones</h3>
-      <p class="movie-card__text">
-        Початок Війн клонів та занепад Республіки.
-      </p>
-    </li>
+        <div class="modal-content">
+          <img class="modal-img" src="" alt="" />
 
-    <li class="sw-movies__item movie-card">
-      <span class="movie-card__episode">Episode III</span>
-      <h3 class="movie-card__title">Revenge of the Sith</h3>
-      <p class="movie-card__text">
-        Падіння Джедаїв і народження Дарта Вейдера.
-      </p>
-    </li>
+          <div class="modal-info">
+            <h3 class="modal-title"></h3>
+            <p class="modal-desc"></p>
 
-    <li class="sw-movies__item movie-card">
-      <span class="movie-card__episode">Episode IV</span>
-      <h3 class="movie-card__title">A New Hope</h3>
-      <p class="movie-card__text">
-        Люк вступає в боротьбу проти Імперії.
-      </p>
-    </li>
-
-    <li class="sw-movies__item movie-card">
-      <span class="movie-card__episode">Episode V</span>
-      <h3 class="movie-card__title">The Empire Strikes Back</h3>
-      <p class="movie-card__text">
-        Імперія завдає нищівного удару Повстанцям.
-      </p>
-    </li>
-
-    <li class="sw-movies__item movie-card">
-      <span class="movie-card__episode">Episode VI</span>
-      <h3 class="movie-card__title">Return of the Jedi</h3>
-      <p class="movie-card__text">
-        Падіння Імператора та спасіння Енакіна.
-      </p>
-    </li>
-
-  </ul>
-</section>
-
-
-</main>
-<!-- Modal for lightsaber section -->
-  <div class="form-modal-backdrop is-hidden">
-  <div class="form-modal">
-
-    <button class="modal-close">✕</button>
-
-    <div class="modal-content">
-      <img class="modal-img" src="" alt="">
-
-      <div class="modal-info">
-        <h3 class="modal-title"></h3>
-        <p class="modal-desc"></p>
-
-        <h4>Відомі користувачі:</h4>
-        <ul class="modal-users"></ul>
+            <h4>Відомі користувачі:</h4>
+            <ul class="modal-users"></ul>
+          </div>
+        </div>
       </div>
     </div>
+    <!-- MODAl for charecter -->
+    <div class="character-modal" id="characterModal">
+      <div class="character-modal__overlay"></div>
 
-  </div>
-</div>
-<!-- MODAl for charecter -->
-<div class="character-modal" id="characterModal">
-  <div class="character-modal__overlay"></div>
+      <div class="character-modal__content">
+        <button class="character-modal__close" id="characterModalClose">
+          ✕
+        </button>
 
-  <div class="character-modal__content">
-    <button class="character-modal__close" id="characterModalClose">
-      ✕
-    </button>
-
-    <img id="characterImage" class="character-modal__image" src="" alt="">
-    <h2 id="characterName"></h2>
-    <p id="characterDescription"></p>
-  </div>
-</div>
-<!-- MODAl for films -->
- <div id="movieModal" class="movie-modal">
-  <div class="movie-modal__content">
-
-    <button id="movieModalClose" class="movie-modal__close">✕</button>
-
-    <div class="movie-modal__body">
-      <img id="modalMovieImage" class="movie-modal__img" src="" alt="">
-
-      <div class="movie-modal__info">
-        <h3 id="modalMovieTitle"></h3>
-        <p id="modalMovieStory"></p>
+        <img id="characterImage" class="character-modal__image" src="" alt="" />
+        <h2 id="characterName"></h2>
+        <p id="characterDescription"></p>
       </div>
     </div>
+    <!-- MODAl for films -->
+    <div id="movieModal" class="movie-modal">
+      <div class="movie-modal__content">
+        <button id="movieModalClose" class="movie-modal__close">✕</button>
 
-  </div>
-</div>
+        <div class="movie-modal__body">
+          <img id="modalMovieImage" class="movie-modal__img" src="" alt="" />
 
-<div id="confirmModal" class="movie-modal">
-  <div class="movie-modal__content">
-
-    <div class="movie-modal__body">
-      <div class="movie-modal__info">
-        <h3>Бажаєте продовжити перегляд?</h3>
-        <div style="margin-top:20px; display:flex; gap:15px;">
-          <button id="confirmYes">ТАК</button>
-          <button id="confirmNo">НІ</button>
+          <div class="movie-modal__info">
+            <h3 id="modalMovieTitle"></h3>
+            <p id="modalMovieStory"></p>
+          </div>
         </div>
       </div>
     </div>
 
-  </div>
-</div>
+    <div id="confirmModal" class="movie-modal">
+      <div class="movie-modal__content">
+        <div class="movie-modal__body">
+          <div class="movie-modal__info">
+            <h3>Бажаєте продовжити перегляд?</h3>
+            <div style="margin-top: 20px; display: flex; gap: 15px">
+              <button id="confirmYes">ТАК</button>
+              <button id="confirmNo">НІ</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<div class="modal" id="planetModal">
-  <div class="modal__content">
-    <span class="modal__close">&times;</span>
-    <h2 id="modalTitle"></h2>
-    <div id="modalText"></div>
-  </div>
-</div>
+    <div class="modal" id="planetModal">
+      <div class="modal__content">
+        <span class="modal__close">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <div id="modalText"></div>
+      </div>
+    </div>
+     
+    
+    
+    
+    
+    
+    
+    
 
-
-
-
-
-
-
-</body>
+  </body>
 </html>
