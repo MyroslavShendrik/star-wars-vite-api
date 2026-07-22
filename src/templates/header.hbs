@@ -1,0 +1,21 @@
+<div class="header-stars" id="header-stars"></div>
+
+<h1 class="header__title">
+    {{headerTitle}}
+</h1>
+
+<nav>
+    <ul class="header__menu">
+
+        {{#each headerMenu}}
+
+        <li class="header__menu-item">
+            <a href="{{link}}">
+                {{title}}
+            </a>
+        </li>
+
+        {{/each}}
+
+    </ul>
+</nav>
