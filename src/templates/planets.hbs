@@ -1,9 +1,60 @@
+<h2 class="sw-planets__title sw-section-title">
+  Відомі планети Галактики
+</h2>
+
+<form class="create-planet-form">
+  <input
+    class="planet-name"
+    type="text"
+    placeholder="Назва планети"
+    required
+  />
+
+  <button type="submit">
+    Додати
+  </button>
+</form>
+
+<input
+  type="text"
+  id="searchPlanet"
+  placeholder="Пошук планети..."
+/>
+
+<button id="searchBtn">
+  Знайти
+</button>
+
+<ul class="sw-planets__list">
+
 {{#each this}}
+
 <li
-    class="sw-planets__item planet-card"
-    data-id="{{id}}"
-    data-name="{{name}}"
+class="sw-planets__item planet-card"
+data-id="{{id}}"
+data-name="{{name}}"
 >
-    {{name}}
+
+<span>{{name}}</span>
+
+<div>
+
+<button
+class="edit-btn"
+data-id="{{id}}">
+✏️
+</button>
+
+<button
+class="delete-btn"
+data-id="{{id}}">
+🗑
+</button>
+
+</div>
+
 </li>
+
 {{/each}}
+
+</ul>
