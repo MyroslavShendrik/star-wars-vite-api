@@ -1,0 +1,15 @@
+{{#each this}}
+<article class="sw-era sw-era--{{@index}}">
+  <h2 class="sw-era__title">{{title}}</h2>
+
+  <img
+    class="sw-era__image"
+    src="{{image}}"
+    alt="{{imageAlt}}"
+  />
+
+  <p class="sw-era__description">
+    {{description}}
+  </p>
+</article>
+{{/each}}

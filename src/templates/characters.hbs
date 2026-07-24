@@ -1,0 +1,22 @@
+{{#each this}}
+<article
+class="sw-characters__group character-group character-group--{{class}}">
+
+<h3 class="character-group__title">
+{{title}}
+</h3>
+
+<ul class="character-group__list">
+
+{{#each characters}}
+
+<li class="character-group__item">
+{{this}}
+</li>
+
+{{/each}}
+
+</ul>
+
+</article>
+{{/each}}

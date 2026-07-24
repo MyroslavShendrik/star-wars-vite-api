@@ -1,9 +1,9 @@
-console.log("секція епохи!");
-import Handlebars from "handlebars";
-import swEraTemplate from "../templates/sw-era.hbs?raw";
-console.log("swEraTemplate:",swEraTemplate);
-const container = document.querySelector(".sw-era");
-console.log("container:",container);
+// console.log("секція епохи!");
+// import Handlebars from "handlebars";
+// import swEraTemplate from "../templates/sw-era.hbs?raw";
+// console.log("swEraTemplate:",swEraTemplate);
+// const container = document.querySelector(".sw-era");
+// console.log("container:",container);
 // const eras = [
 //   {
 //     erasTitle: "Стара Республіка",
@@ -47,24 +47,43 @@ console.log("container:",container);
 
  //!var2
 //! Створюємо рядок запиту,
+// const BaseURL = "http://localhost:3000/";
+// const EndPoint = "starWars";
+// const url = `${BaseURL}${EndPoint}`;
+// console.log("url:", url);
+
+// async function getPosts() {
+//   try {
+//     const response = await fetch(url);
+
+//     const data = await response.json();
+//     console.log("data:",data.encyclopedia.eras);
+//     const template = Handlebars.compile(swEraTemplate);
+//     const markup = template(data.encyclopedia.eras);
+
+//     container.innerHTML = markup;
+    
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+// getPosts()
+
+import Handlebars from "handlebars";
+import eraTemplate from "../templates/era.hbs?raw";
+
+const container = document.querySelector(".sw-era");
+
 const BaseURL = "http://localhost:3000/";
 const EndPoint = "starWars";
-const url = `${BaseURL}${EndPoint}`;
-console.log("url:", url);
 
-async function getPosts() {
-  try {
-    const response = await fetch(url);
+async function renderEras() {
+  const response = await fetch(`${BaseURL}${EndPoint}`);
+  const data = await response.json();
 
-    const data = await response.json();
-    console.log("data:",data.encyclopedia.eras);
-    const template = Handlebars.compile(swEraTemplate);
-    const markup = template(data.encyclopedia.eras);
+  const template = Handlebars.compile(eraTemplate);
 
-    container.innerHTML = markup;
-    
-  } catch (error) {
-    console.log(error);
-  }
+  container.innerHTML = template(data.encyclopedia.eras);
 }
-getPosts()
+
+renderEras();

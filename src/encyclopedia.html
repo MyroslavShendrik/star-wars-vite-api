@@ -8,7 +8,7 @@
   </head>
   <body>
     <header class="header">
-      <div class="header-stars" id="header-stars"></div>
+      <!-- <div class="header-stars" id="header-stars"></div>
       <h1 class="header__title">Star Wars Fan Hub</h1>
       <nav>
         <ul class="header__menu">
@@ -18,7 +18,7 @@
           </li>
           <li class="header__menu-item"><a href="shop.html">Магазин</a></li>
         </ul>
-      </nav>
+      </nav> -->
 
       <div class="dev-timer" id="dev-timer">
         <h2 class="dev-timer__title">До завершення розробки залишилось:</h2>
@@ -90,7 +90,7 @@
 
       <!-- ОРДЕНИ ТА ФРАКЦІЇ -->
       <section class="sw-factions">
-        <h2 class="sw-section-title">Організації та ордени</h2>
+        <!-- <h2 class="sw-section-title">Організації та ордени</h2>
 
         <article class="sw-faction sw-faction--jedi">
           <h3>Орден Джедаїв</h3>
@@ -131,32 +131,32 @@
           <p>
             Мілітаризована держава, спадкоємець ідеології Галактичної Імперії.
           </p>
-        </article>
+        </article> -->
       </section>
 
       <!-- ФОРМИ БОЮ -->
       <section class="sw-lightsaber">
-        <h2 class="sw-section-title">Форми бою на світлових мечах</h2>
+         <h2 class="sw-section-title">Форми бою на світлових мечах</h2>
 
         <ul class="forms-list">
-          <li data-form="shii-cho">Form I — Shii-Cho</li>
+          <!-- <li data-form="shii-cho">Form I — Shii-Cho</li>
           <li data-form="makashi">Form II — Makashi</li>
           <li data-form="soresu">Form III — Soresu</li>
           <li data-form="ataru">Form IV — Ataru</li>
           <li data-form="djem-so">Form V — Djem So</li>
           <li data-form="niman">Form VI — Niman</li>
-          <li data-form="juyo">Form VII — Juyo / Vaapad</li>
-        </ul>
+          <li data-form="juyo">Form VII — Juyo / Vaapad</li> -->
+        </ul> 
       </section>
 
       <!-- ПЛАНЕТИ -->
       <section class="sw-planets">
-        <h2 class="sw-planets__title sw-section-title">
+        <!-- <h2 class="sw-planets__title sw-section-title">
           Відомі планети Галактики
         </h2>
         <input type="text" id="searchPlanet" placeholder="Пошук планети..." />
         <button id="searchBtn">Знайти</button>
-        <ul class="sw-planets__list">
+        <ul class="sw-planets__list"> -->
           <!-- <li class="sw-planets__item planet-card">
       <h3 class="planet-card__title">Tatooine</h3>
       <p class="planet-card__text">
@@ -213,7 +213,7 @@
         Війн клонів.
       </p>
     </li> -->
-          <li
+          <!-- <li
             class="sw-planets__item planet-card"
             data-id="1"
             data-name="Tatooine"
@@ -258,16 +258,17 @@
           >
             Kashyyyk
           </li>
-        </ul>
+        </ul> -->
       </section>
 
       <section class="sw-characters">
-        <h2 class="sw-characters__title sw-section-title">
+
+         <h2 class="sw-characters__title sw-section-title"> 
           Галактичні фракції та герої
         </h2>
 
         <div class="sw-characters__groups">
-          <article
+          <!-- <article
             class="sw-characters__group character-group character-group--jedi"
           >
             <h3 class="character-group__title">Орден Джедаїв</h3>
@@ -316,15 +317,16 @@
               <li class="character-group__item">Admiral Thrawn</li>
               <li class="character-group__item">Imperial Inquisitors</li>
             </ul>
-          </article>
-        </div>
+          </article> -->
+        </div> 
       </section>
 
       <section class="sw-movies">
-        <h2 class="sw-movies__title sw-section-title">Сага Star Wars</h2>
+        
+         <h2 class="sw-movies__title sw-section-title">Сага Star Wars</h2> 
 
         <ul class="sw-movies__list">
-          <li class="sw-movies__item movie-card">
+          <!-- <li class="sw-movies__item movie-card">
             <span class="movie-card__episode">Episode I</span>
             <h3 class="movie-card__title">The Phantom Menace</h3>
             <p class="movie-card__text">
@@ -370,8 +372,8 @@
             <p class="movie-card__text">
               Падіння Імператора та спасіння Енакіна.
             </p>
-          </li>
-        </ul>
+          </li> -->
+        </ul> 
       </section>
     </main>
     <!-- Modal for lightsaber section -->
@@ -443,14 +445,21 @@
         <div id="modalText"></div>
       </div>
     </div>
-     <script type="module" src="./js/sw-era.js"></script>
-    <script type="module" src="./js/forms-data.js"></script>
-    <script type="module" src="./js/modal.js"></script>
-    <script type="module" src="./js/films-modal.js"></script>
-    <script type="module" src="./js/timer.js"></script>
-    <script type="module" src="./js/charecter-modal.js"></script>
-    <script type="module" src="./js/star-sky.js"></script>
-    <script type="module" src="./js/planets-modal.js"></script>
+<script type="module" src="./js/header.js"></script>
+<script type="module" src="./js/sw-era.js"></script>
+<script type="module" src="./js/factions.js"></script>
+<script type="module" src="./js/forms.js"></script>
+<script type="module" src="./js/planets.js"></script>
+<script type="module" src="./js/characters.js"></script>
+<script type="module" src="./js/movies.js"></script>
+<script type="module" src="./js/footer.js"></script>
+
+<script type="module" src="./js/modal.js"></script>
+<script type="module" src="./js/films-modal.js"></script>
+<script type="module" src="./js/timer.js"></script>
+<script type="module" src="./js/charecter-modal.js"></script>
+<script type="module" src="./js/star-sky.js"></script>
+<script type="module" src="./js/planets-modal.js"></script>
 
   </body>
 </html>
