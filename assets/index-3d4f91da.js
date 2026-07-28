@@ -1,4 +1,4 @@
-import{H as e}from"./star-sky-be85fc34.js";const c=`<h2 class="section__title">
+import{H as e}from"./star-sky-2bdbce32.js";const c=`<h2 class="section__title">
     {{title}}
 </h2>
 
