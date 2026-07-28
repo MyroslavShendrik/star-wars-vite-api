@@ -6,17 +6,24 @@ const EndPoint = "starWars";
 
 const planetsSection = document.querySelector(".sw-planets");
 
+let encyclopedia = {};
 let planets = [];
+
 let planetIdToDelete = null;
 let planetIdToEdit = null;
 
 async function getPlanets() {
-  const response = await fetch(`${BaseURL}${EndPoint}`);
-  const data = await response.json();
+  try {
+    const response = await fetch(`${BaseURL}${EndPoint}`);
+    const data = await response.json();
 
-  planets = data.encyclopedia.planets;
+    encyclopedia = data.encyclopedia;
+    planets = encyclopedia.planets;
 
-  renderPlanets();
+    renderPlanets();
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function renderPlanets() {
@@ -88,19 +95,23 @@ function handleButtons(event) {
 }
 
 async function savePlanets() {
-  await fetch(`${BaseURL}${EndPoint}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      encyclopedia: {
-        planets,
-      },
-    }),
-  });
+  try {
+    encyclopedia.planets = planets;
 
-  getPlanets();
+    await fetch(`${BaseURL}${EndPoint}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        encyclopedia,
+      }),
+    });
+
+    getPlanets();
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 getPlanets();

@@ -44,3 +44,70 @@
     color: #cfd6e6;
   }
 }
+
+.create-btn {
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: 2px solid #ffe81f;
+  background: #111;
+  color: #ffe81f;
+  font-size: 16px;
+  font-weight: 600;
+
+  &:hover {
+    background: #ffe81f;
+    color: #000;
+    box-shadow: 0 0 15px #ffe81f;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: scale(.96);
+  }
+}
+
+.edit-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: transparent;
+  border: 2px solid #4fc3f7;
+  color: #4fc3f7;
+  font-weight: 600;
+
+  &:hover {
+    background: #4fc3f7;
+    color: #000;
+    box-shadow: 0 0 12px #4fc3f7;
+  }
+
+  &:active {
+    transform: scale(.95);
+  }
+}
+
+
+.delete-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: transparent;
+  border: 2px solid #ff4d4d;
+  color: #ff4d4d;
+  font-weight: 600;
+
+  &:hover {
+    background: #ff4d4d;
+    color: #fff;
+    box-shadow: 0 0 12px #ff4d4d;
+  }
+
+  &:active {
+    transform: scale(.95);
+  }
+}
+
+
+.planet-card__actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
