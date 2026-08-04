@@ -1,4 +1,4 @@
-import{H as e}from"./timer-7f9299e0.js";const c=`<h2 class="section__title">
+import{H as e}from"./timer-c89a4807.js";const c=`<h2 class="section__title">
     {{title}}
 </h2>
 
