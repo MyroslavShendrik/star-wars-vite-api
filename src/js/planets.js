@@ -30,7 +30,8 @@ function renderPlanets() {
   const template = Handlebars.compile(planetsTemplate);
 
   planetsSection.innerHTML = template(planets);
-
+  const searchBtn = document.getElementById("searchBtn");
+console.log("searchBtn:",searchBtn);
   addListeners();
 }
 

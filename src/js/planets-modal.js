@@ -10,6 +10,7 @@ const cards = document.querySelectorAll(".planet-card");
 // ================= ПОШУК =================
 const searchInput = document.getElementById("searchPlanet");
 const searchBtn = document.getElementById("searchBtn");
+console.log("searchBtn:",searchBtn);
 
 // ---------- показ ----------
 function showPlanet(planet) {
