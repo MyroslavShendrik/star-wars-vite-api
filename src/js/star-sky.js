@@ -4,7 +4,7 @@ console.log(
 );
 
 const starsContainer = document.getElementById("header-stars");
-
+// console.log("starsContainer:",starsContainer);
 const STAR_COUNT = 40;
 let stars = [];
 
