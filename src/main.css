@@ -185,19 +185,32 @@ body {
   font-size: 18px;
 }
 
+.sw-era-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
 .sw-era {
   display: flex;
   gap: 32px;
   align-items: center;
   padding: 48px;
-  margin-bottom: 40px;
   background: linear-gradient(135deg, #111 0%, #151822 100%);
   border-radius: 20px;
 }
 .sw-era img {
   width: 40%;
+  height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 12px;
+}
+.sw-era__content {
+  flex: 1;
 }
 .sw-era__title {
   color: #feda4a;
@@ -207,6 +220,7 @@ body {
 .sw-era p {
   max-width: 500px;
   line-height: 1.6;
+  margin: 0;
 }
 
 .sw-factions {

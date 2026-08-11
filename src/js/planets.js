@@ -12,6 +12,8 @@ let planets = [];
 let planetIdToDelete = null;
 let planetIdToEdit = null;
 
+// ================= ПОЛУЧЕНИЕ ПЛАНЕТ =================
+
 async function getPlanets() {
   try {
     const response = await fetch(`${BaseURL}${EndPoint}`);
@@ -26,14 +28,18 @@ async function getPlanets() {
   }
 }
 
+// ================= ОТРИСОВКА =================
+
 function renderPlanets() {
   const template = Handlebars.compile(planetsTemplate);
 
   planetsSection.innerHTML = template(planets);
-  const searchBtn = document.getElementById("searchBtn");
-console.log("searchBtn:",searchBtn);
+
   addListeners();
+  addPlanetModalListeners();
 }
+
+// ================= LISTENERS =================
 
 function addListeners() {
   document
@@ -44,6 +50,8 @@ function addListeners() {
     .querySelector(".sw-planets__list")
     .addEventListener("click", handleButtons);
 }
+
+// ================= СОЗДАНИЕ =================
 
 async function createPlanet(event) {
   event.preventDefault();
@@ -63,6 +71,8 @@ async function createPlanet(event) {
 
   event.target.reset();
 }
+
+// ================= КНОПКИ EDIT / DELETE =================
 
 function handleButtons(event) {
   const editBtn = event.target.closest(".edit-btn");
@@ -95,6 +105,8 @@ function handleButtons(event) {
   }
 }
 
+// ================= СОХРАНЕНИЕ =================
+
 async function savePlanets() {
   try {
     encyclopedia.planets = planets;
@@ -114,5 +126,87 @@ async function savePlanets() {
     console.log(error);
   }
 }
+
+// ================= ПОЛУЧЕНИЕ ПЛАНЕТЫ ИЗ SWAPI =================
+
+async function fetchPlanet(name) {
+  const response = await fetch("https://swapi.info/api/planets");
+
+  const data = await response.json();
+
+  const planet =
+    data.find(
+      (planet) =>
+        planet.name.toLowerCase() === name.toLowerCase()
+    ) ||
+    data.find(
+      (planet) =>
+        planet.name.toLowerCase().includes(name.toLowerCase())
+    );
+
+  if (!planet) {
+    throw new Error("Планету не знайдено");
+  }
+
+  return planet;
+}
+
+// ================= МОДАЛКА =================
+
+function addPlanetModalListeners() {
+  const cards = document.querySelectorAll(".planet-card");
+
+  const modal = document.getElementById("planetModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalText = document.getElementById("modalText");
+  const closeBtn = document.querySelector(".modal__close");
+
+  // ---------- КЛІК ПО КАРТЦІ ----------
+
+  cards.forEach((card) => {
+    card.addEventListener("click", async () => {
+      const name = card.dataset.name;
+
+      try {
+        const planet = await fetchPlanet(name);
+
+        modalTitle.textContent = planet.name;
+
+        modalText.innerHTML = `
+          <p><b>Climate:</b> ${planet.climate}</p>
+          <p><b>Population:</b> ${planet.population}</p>
+          <p><b>Gravity:</b> ${planet.gravity}</p>
+          <p><b>Terrain:</b> ${planet.terrain}</p>
+        `;
+
+        modal.style.display = "block";
+      } catch (error) {
+        modalTitle.textContent = "Помилка";
+        modalText.textContent = "Не вдалося завантажити дані";
+        modal.style.display = "block";
+      }
+    });
+  });
+
+  // ---------- ЗАКРИТТЯ ----------
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  }
+
+  // ---------- КЛІК ПО BACKDROP ----------
+
+  if (modal) {
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
+}
+
+// ================= ЗАПУСК =================
 
 getPlanets();

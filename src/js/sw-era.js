@@ -1,89 +1,22 @@
-// console.log("секція епохи!");
-// import Handlebars from "handlebars";
-// import swEraTemplate from "../templates/sw-era.hbs?raw";
-// console.log("swEraTemplate:",swEraTemplate);
-// const container = document.querySelector(".sw-era");
-// console.log("container:",container);
-// const eras = [
-//   {
-//     erasTitle: "Стара Республіка",
-//     erasImage: "images/old-republic.webp",
-//     erasImageAlt: "Old Republic",
-//     erasDescription:
-//       "Епоха тисячолітніх війн між Джедаями та Сітхами, формування орденів та перших галактичних імперій",
-//   },
-//   {
-//     erasTitle: "Війни клонів",
-//     erasImage: "images/clone-wars.jpg",
-//     erasImageAlt: "Clone Wars",
-//     erasDescription:
-//       " Галактичний конфлікт між Республікою та КНС, що призвів до падіння джедаїв і виникнення Імперії",
-//   },
-//   {
-//     erasTitle: "Час Імперії",
-//     erasImage: "images/galactic-empire.jpg",
-//     erasImageAlt: "Galactic Empire",
-//     erasDescription:
-//       "Правління Палпатіна, переслідування джедаїв і народження Повстанського Альянсу",
-//   },
-//   {
-//     erasTitle: "Нова Республіка",
-//     erasImage: "images/new-republic.jpg",
-//     erasImageAlt: "New Republic",
-//     erasDescription:
-//       " Період відновлення після падіння Імперії та поява Першого Ордену",
-//   },
-// ];
-
-
-// console.log("eras/lenght:", eras.length);
-// console.log("eras:", eras);
-
-//  const template = Handlebars.compile(swEraTemplate);
-//  const markup = template(eras);
-//  console.log("markup:",markup);
-//  container.innerHTML = markup
-
-
- //!var2
-//! Створюємо рядок запиту,
-// const BaseURL = "http://localhost:3000/";
-// const EndPoint = "starWars";
-// const url = `${BaseURL}${EndPoint}`;
-// console.log("url:", url);
-
-// async function getPosts() {
-//   try {
-//     const response = await fetch(url);
-
-//     const data = await response.json();
-//     console.log("data:",data.encyclopedia.eras);
-//     const template = Handlebars.compile(swEraTemplate);
-//     const markup = template(data.encyclopedia.eras);
-
-//     container.innerHTML = markup;
-    
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-// getPosts()
-
 import Handlebars from "handlebars";
 import eraTemplate from "../templates/era.hbs?raw";
 
-const container = document.querySelector(".sw-era");
+const container = document.querySelector(".sw-eras__container");
 
 const BaseURL = "http://localhost:3000/";
 const EndPoint = "starWars";
 
 async function renderEras() {
-  const response = await fetch(`${BaseURL}${EndPoint}`);
-  const data = await response.json();
+  try {
+    const response = await fetch(`${BaseURL}${EndPoint}`);
+    const data = await response.json();
 
-  const template = Handlebars.compile(eraTemplate);
+    const template = Handlebars.compile(eraTemplate);
 
-  container.innerHTML = template(data.encyclopedia.eras);
+    container.innerHTML = template(data.encyclopedia.eras);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 renderEras();
