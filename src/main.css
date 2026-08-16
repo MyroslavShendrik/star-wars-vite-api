@@ -430,6 +430,281 @@ body {
   margin-top: 15px;
 }
 
+.planet-crud-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.planet-crud-modal__content {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 30px;
+  border-radius: 15px;
+  background: #111827;
+  color: white;
+  border: 1px solid #1d2945;
+}
+
+.planet-crud-modal__content h2 {
+  margin-bottom: 25px;
+  color: #ffd000;
+  text-align: center;
+}
+
+.planet-crud-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.create-planet-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.create-planet-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #ffd000;
+}
+
+.create-planet-form input,
+.create-planet-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #1d2945;
+  border-radius: 7px;
+  outline: none;
+  background: #05070f;
+  color: white;
+  font-size: 15px;
+}
+
+.create-planet-form input:focus,
+.create-planet-form textarea:focus {
+  border-color: #ffd000;
+}
+
+.create-planet-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.planet-form-error {
+  min-height: 20px;
+  margin: 0;
+  color: #ff4d4d;
+}
+
+.planet-crud-modal__buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.create-planet-submit,
+.cancel-planet-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.create-planet-submit {
+  border: 2px solid #ffd000;
+  background: #ffd000;
+  color: #000;
+}
+
+.cancel-planet-btn {
+  border: 2px solid #777;
+  background: transparent;
+  color: white;
+}
+
+.planet-edit-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.planet-edit-modal {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 30px;
+  background: #0f1626;
+  color: #fff;
+  border: 1px solid #ffd000;
+  border-radius: 14px;
+  box-shadow: 0 0 30px rgba(255, 208, 0, 0.3);
+}
+.planet-edit-modal h2 {
+  margin-bottom: 25px;
+  color: #ffd000;
+}
+
+.planet-edit-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.planet-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.planet-edit-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+}
+.planet-edit-form input,
+.planet-edit-form textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #1d2945;
+  border-radius: 7px;
+  background: #05070f;
+  color: #fff;
+  outline: none;
+}
+.planet-edit-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+.planet-edit-form input:focus,
+.planet-edit-form textarea:focus {
+  border-color: #ffd000;
+}
+
+.planet-save-btn {
+  margin-top: 10px;
+  padding: 12px;
+  border: 2px solid #ffd000;
+  border-radius: 8px;
+  background: #ffd000;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+}
+.planet-save-btn:hover {
+  box-shadow: 0 0 15px #ffd000;
+}
+
+.planet-delete-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.planet-delete-modal {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  background: #0f1626;
+  color: #fff;
+  border: 1px solid #ff4d4d;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(255, 77, 77, 0.3);
+}
+.planet-delete-modal h2 {
+  margin-bottom: 20px;
+  color: #ff4d4d;
+}
+.planet-delete-modal p {
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.planet-delete-close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.planet-delete-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.planet-delete-cancel,
+.planet-delete-confirm {
+  padding: 10px 20px;
+  border-radius: 7px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.planet-delete-cancel {
+  border: 2px solid #4fc3f7;
+  background: transparent;
+  color: #4fc3f7;
+}
+.planet-delete-cancel:hover {
+  background: #4fc3f7;
+  color: #000;
+}
+
+.planet-delete-confirm {
+  border: 2px solid #ff4d4d;
+  background: transparent;
+  color: #ff4d4d;
+}
+.planet-delete-confirm:hover {
+  background: #ff4d4d;
+  color: #fff;
+}
+.planet-delete-confirm:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .sw-characters {
   padding: 80px 20px;
   background: #02030a;

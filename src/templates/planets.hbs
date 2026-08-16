@@ -7,6 +7,7 @@
     class="planet-name"
     type="text"
     placeholder="Назва планети"
+    autocomplete="off"
     required
   />
 
@@ -19,42 +20,55 @@
   type="text"
   id="searchPlanet"
   placeholder="Пошук планети..."
+  autocomplete="off"
 />
 
-<button id="searchBtn">
+<button id="searchBtn" type="button">
   Знайти
 </button>
 
 <ul class="sw-planets__list">
 
-{{#each this}}
+  {{#each this}}
 
-<li
-class="sw-planets__item planet-card"
-data-id="{{id}}"
-data-name="{{name}}"
->
+    <li
+      class="sw-planets__item planet-card"
+      data-id="{{id}}"
+      data-name="{{name}}"
+    >
 
-<span>{{name}}</span>
+      <div>
+        <h3 class="planet-card__title">
+          {{name}}
+        </h3>
 
-<div>
+        <p class="planet-card__text">
+          {{description}}
+        </p>
+      </div>
 
-<button
-class="edit-btn"
-data-id="{{id}}">
-✏️
-</button>
+      <div class="planet-card__actions">
 
-<button
-class="delete-btn"
-data-id="{{id}}">
-🗑
-</button>
+        <button
+          type="button"
+          class="edit-btn"
+          data-id="{{id}}"
+        >
+          ✏️ Редагувати
+        </button>
 
-</div>
+        <button
+          type="button"
+          class="delete-btn"
+          data-id="{{id}}"
+        >
+          🗑 Видалити
+        </button>
 
-</li>
+      </div>
 
-{{/each}}
+    </li>
+
+  {{/each}}
 
 </ul>
