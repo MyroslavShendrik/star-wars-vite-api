@@ -760,15 +760,25 @@ async function savePlanets() {
 // ПОШУК
 // =====================================================
 
+
+
+let searchTimeout;
+
 function handleSearch(event) {
+  clearTimeout(searchTimeout);
+
   const keyword = event.target.value
     .trim()
     .toLowerCase();
 
-  console.log("12. Пошук:", keyword);
+  searchTimeout = setTimeout(() => {
+    console.log("12. Пошук:", keyword);
 
-  searchPlanets(keyword);
+    searchPlanets(keyword);
+  }, 1500);
 }
+
+
 
 function handleSearchButton() {
   const input = document.querySelector("#searchPlanet");
@@ -781,8 +791,11 @@ function handleSearchButton() {
     .trim()
     .toLowerCase();
 
+  console.log("12. Пошук кнопкою:", keyword);
+
   searchPlanets(keyword);
 }
+
 
 function searchPlanets(keyword) {
   if (!keyword) {
@@ -796,10 +809,7 @@ function searchPlanets(keyword) {
       .includes(keyword)
   );
 
-  console.log(
-    "Результат пошуку:",
-    filtered
-  );
+  console.log("Результат пошуку:", filtered);
 
   renderPlanets(filtered);
 }
