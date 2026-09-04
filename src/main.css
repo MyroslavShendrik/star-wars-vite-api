@@ -705,6 +705,388 @@ body {
   cursor: not-allowed;
 }
 
+.create-planet-form {
+  max-width: 650px;
+  margin: 0 auto 25px;
+  display: flex;
+  gap: 12px;
+  padding: 18px;
+  background: #0f1626;
+  border: 1px solid #1d2945;
+  border-radius: 14px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+}
+.create-planet-form input {
+  flex: 1;
+  padding: 13px 16px;
+  border: 1px solid #293652;
+  border-radius: 9px;
+  outline: none;
+  background: #070b14;
+  color: #fff;
+  font-size: 15px;
+  transition: 0.25s;
+}
+.create-planet-form input::-moz-placeholder {
+  color: #747f95;
+}
+.create-planet-form input::placeholder {
+  color: #747f95;
+}
+.create-planet-form input:focus {
+  border-color: #ffd000;
+  box-shadow: 0 0 0 2px rgba(255, 208, 0, 0.1), 0 0 12px rgba(255, 208, 0, 0.2);
+}
+.create-planet-form button {
+  padding: 12px 24px;
+  border: 2px solid #ffd000;
+  border-radius: 9px;
+  background: transparent;
+  color: #ffd000;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.create-planet-form button:hover {
+  background: #ffd000;
+  color: #05070f;
+  box-shadow: 0 0 18px rgba(255, 208, 0, 0.5);
+  transform: translateY(-2px);
+}
+.create-planet-form button:active {
+  transform: scale(0.97);
+}
+
+#searchPlanet {
+  display: inline-block;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 10px 30px 0;
+  padding: 12px 15px;
+  border: 1px solid #293652;
+  border-radius: 8px;
+  outline: none;
+  background: #0f1626;
+  color: white;
+  transition: 0.25s;
+}
+#searchPlanet::-moz-placeholder {
+  color: #747f95;
+}
+#searchPlanet::placeholder {
+  color: #747f95;
+}
+#searchPlanet:focus {
+  border-color: #4fc3f7;
+  box-shadow: 0 0 12px rgba(79, 195, 247, 0.25);
+}
+
+#searchBtn {
+  padding: 11px 22px;
+  border: 2px solid #4fc3f7;
+  border-radius: 8px;
+  background: transparent;
+  color: #4fc3f7;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+#searchBtn:hover {
+  background: #4fc3f7;
+  color: #05070f;
+  box-shadow: 0 0 15px rgba(79, 195, 247, 0.45);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  padding: 25px;
+  overflow-y: auto;
+  background: rgba(1, 3, 8, 0.88);
+  backdrop-filter: blur(7px);
+}
+
+.planet-crud-content {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  margin: 40px auto;
+  padding: 35px;
+  background: linear-gradient(145deg, #111827, #0b1020);
+  border: 1px solid #2a3858;
+  border-radius: 18px;
+  color: #fff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), 0 0 30px rgba(255, 208, 0, 0.08);
+  animation: planetModalOpen 0.25s ease;
+}
+
+@keyframes planetModalOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.planet-crud-title {
+  margin: 0 0 30px;
+  text-align: center;
+  color: #ffd000;
+  font-size: 26px;
+  text-shadow: 0 0 15px rgba(255, 208, 0, 0.3);
+}
+
+.planet-crud-close,
+.planet-delete-close {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+  color: #9ca6b8;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.planet-crud-close:hover,
+.planet-delete-close:hover {
+  color: #ff4d4d;
+  border-color: #ff4d4d;
+  background: rgba(255, 77, 77, 0.1);
+  transform: rotate(90deg);
+}
+
+.planet-crud-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.planet-crud-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 600;
+}
+.planet-crud-form input,
+.planet-crud-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #293652;
+  border-radius: 8px;
+  outline: none;
+  background: #060a13;
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  transition: 0.25s;
+}
+.planet-crud-form input::-moz-placeholder, .planet-crud-form textarea::-moz-placeholder {
+  color: #657087;
+}
+.planet-crud-form input::placeholder,
+.planet-crud-form textarea::placeholder {
+  color: #657087;
+}
+.planet-crud-form input:hover,
+.planet-crud-form textarea:hover {
+  border-color: #3c4b6b;
+}
+.planet-crud-form input:focus,
+.planet-crud-form textarea:focus {
+  border-color: #ffd000;
+  box-shadow: 0 0 0 2px rgba(255, 208, 0, 0.08), 0 0 12px rgba(255, 208, 0, 0.15);
+}
+.planet-crud-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.planet-crud-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.planet-save-btn,
+.planet-cancel-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.planet-save-btn {
+  border: 2px solid #ffd000;
+  background: #ffd000;
+  color: #05070f;
+}
+.planet-save-btn:hover {
+  box-shadow: 0 0 18px rgba(255, 208, 0, 0.55);
+  transform: translateY(-2px);
+}
+.planet-save-btn:active {
+  transform: scale(0.97);
+}
+
+.planet-cancel-btn {
+  border: 2px solid #536078;
+  background: transparent;
+  color: #aab4c5;
+}
+.planet-cancel-btn:hover {
+  border-color: #8a96aa;
+  background: #202a3d;
+  color: #fff;
+}
+.planet-cancel-btn:active {
+  transform: scale(0.97);
+}
+
+.planet-delete-content {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  margin: 120px auto;
+  padding: 35px;
+  background: linear-gradient(145deg, #16111a, #0d1018);
+  border: 1px solid rgba(255, 77, 77, 0.6);
+  border-radius: 18px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), 0 0 30px rgba(255, 77, 77, 0.12);
+  animation: planetModalOpen 0.25s ease;
+}
+.planet-delete-content h2 {
+  margin-bottom: 15px;
+  color: #ff4d4d;
+}
+
+.planet-delete-text {
+  margin-bottom: 25px;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.planet-delete-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.planet-delete-confirm,
+.planet-delete-cancel {
+  min-width: 120px;
+  padding: 11px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.planet-delete-confirm {
+  border: 2px solid #ff4d4d;
+  background: #ff4d4d;
+  color: white;
+}
+.planet-delete-confirm:hover {
+  box-shadow: 0 0 17px rgba(255, 77, 77, 0.5);
+  transform: translateY(-2px);
+}
+
+.planet-delete-cancel {
+  border: 2px solid #4fc3f7;
+  background: transparent;
+  color: #4fc3f7;
+}
+.planet-delete-cancel:hover {
+  background: #4fc3f7;
+  color: #05070f;
+}
+
+#planetModal .modal__content {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin: 100px auto;
+  padding: 35px;
+  background: linear-gradient(145deg, #0f1626, #080d18);
+  border: 1px solid #ffd000;
+  border-radius: 18px;
+  color: white;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 208, 0, 0.15);
+  animation: planetModalOpen 0.25s ease;
+}
+#planetModal #modalTitle {
+  margin-bottom: 25px;
+  color: #ffd000;
+  text-align: center;
+  font-size: 28px;
+}
+#planetModal #modalText {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#planetModal #modalText p {
+  margin: 0;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid #1d2945;
+  border-radius: 6px;
+  color: #cfd6e6;
+  line-height: 1.5;
+  transition: 0.2s;
+}
+#planetModal #modalText p:hover {
+  border-left-color: #ffd000;
+  background: rgba(255, 208, 0, 0.04);
+}
+#planetModal #modalText b {
+  color: #ffd000;
+}
+
+@media screen and (max-width: 600px) {
+  .create-planet-form {
+    flex-direction: column;
+  }
+  #searchPlanet {
+    max-width: none;
+    box-sizing: border-box;
+    margin-right: 0;
+  }
+  #searchBtn {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  .planet-crud-content,
+  .planet-delete-content,
+  #planetModal .modal__content {
+    margin: 30px auto;
+    padding: 25px 20px;
+  }
+  .planet-crud-actions,
+  .planet-delete-actions {
+    flex-direction: column;
+  }
+}
 .sw-characters {
   padding: 80px 20px;
   background: #02030a;

@@ -1,3 +1,4 @@
+import debounce from "lodash.debounce";
 import Handlebars from "handlebars";
 import planetsTemplate from "../templates/planets.hbs?raw";
 
@@ -211,7 +212,7 @@ function createCrudModal() {
   modal.className = "modal";
 
   modal.innerHTML = `
-    <div class="modal__content">
+    <div class="modal__content planet-crud-content">
 
       <button
         type="button"
@@ -574,7 +575,7 @@ function createDeleteModal() {
   modal.className = "modal";
 
   modal.innerHTML = `
-    <div class="modal__content">
+    <div class="modal__content planet-delete-content">
 
       <button
         type="button"
@@ -762,21 +763,13 @@ async function savePlanets() {
 
 
 
-let searchTimeout;
+const handleSearch = debounce((event) => {
+  const keyword = event.target.value.trim().toLowerCase();
 
-function handleSearch(event) {
-  clearTimeout(searchTimeout);
+  console.log("12. Пошук:", keyword);
 
-  const keyword = event.target.value
-    .trim()
-    .toLowerCase();
-
-  searchTimeout = setTimeout(() => {
-    console.log("12. Пошук:", keyword);
-
-    searchPlanets(keyword);
-  }, 1500);
-}
+  searchPlanets(keyword);
+}, 1500);
 
 
 
