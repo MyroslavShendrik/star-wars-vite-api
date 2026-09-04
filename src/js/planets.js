@@ -769,7 +769,7 @@ const handleSearch = debounce((event) => {
   console.log("12. Пошук:", keyword);
 
   searchPlanets(keyword);
-}, 1500);
+}, 3000);
 
 
 
