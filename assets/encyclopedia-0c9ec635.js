@@ -69,14 +69,18 @@ import{H as w,g as K,c as j}from"./timer-172cb700.js";const z=`{{#each this}}
 <ul class="sw-planets__list">
 
   {{#each this}}
+  
 
     <li
       class="sw-planets__item planet-card"
       data-id="{{id}}"
       data-name="{{name}}"
     >
-
+         
       <div>
+
+      <img src="{{image}}" alt="{{name}}"> 
+
         <h3 class="planet-card__title">
           {{name}}
         </h3>
