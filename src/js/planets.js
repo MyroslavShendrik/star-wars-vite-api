@@ -54,10 +54,35 @@ function renderPlanets(list = planets) {
 
   planetsSection.innerHTML = template(list);
 
+  renderPlanetSelect();
+
   addListeners();
   addPlanetModalListeners();
 }
 
+function renderPlanetSelect() {
+  const select = document.querySelector(".planet-select");
+
+  if (!select) {
+    console.error("❌ .planet-select не знайдений");
+    return;
+  }
+
+  select.innerHTML = `
+    <option value="">Оберіть планету</option>
+  `;
+
+  encyclopedia.availablePlanets.forEach((planet) => {
+    select.insertAdjacentHTML(
+      "beforeend",
+      `
+        <option value="${planet.id}">
+          ${planet.name}
+        </option>
+      `
+    );
+  });
+}
 // =====================================================
 // LISTENERS
 // =====================================================
@@ -69,6 +94,10 @@ function addListeners() {
   const planetsList = document.querySelector(".sw-planets__list");
   const searchInput = document.querySelector("#searchPlanet");
   const searchBtn = document.querySelector("#searchBtn");
+
+  const addAvailablePlanetBtn = document.querySelector(
+  ".add-available-planet-btn"
+);
 
   if (!createForm) {
     console.error("❌ .create-planet-form НЕ знайдений");
@@ -82,6 +111,13 @@ function addListeners() {
   if (createForm) {
     createForm.addEventListener("submit", handleCreateSubmit);
   }
+
+  if (addAvailablePlanetBtn) {
+  addAvailablePlanetBtn.addEventListener(
+    "click",
+    handleAddAvailablePlanet
+  );
+}
 
   // EDIT / DELETE
   if (planetsList) {
@@ -134,6 +170,54 @@ function handleCreateSubmit(event) {
     population: "",
     description: "",
   });
+}
+
+async function handleAddAvailablePlanet() {
+  console.log("Додаємо планету з availablePlanets");
+
+  const select = document.querySelector(".planet-select");
+
+  if (!select) {
+    console.error("❌ .planet-select не знайдений");
+    return;
+  }
+
+  const selectedId = select.value;
+
+  if (!selectedId) {
+    alert("Оберіть планету зі списку.");
+    return;
+  }
+
+  const planet = encyclopedia.availablePlanets.find(
+    (item) => Number(item.id) === Number(selectedId)
+  );
+
+  if (!planet) {
+    console.error("❌ Планету не знайдено:", selectedId);
+    return;
+  }
+
+  console.log("Обрана планета:", planet);
+
+  // Додаємо планету до списку відображення
+  planets.push(planet);
+
+  // Видаляємо її зі списку доступних
+  encyclopedia.availablePlanets =
+    encyclopedia.availablePlanets.filter(
+      (item) => Number(item.id) !== Number(selectedId)
+    );
+
+  console.log("Планети:", planets);
+  console.log(
+    "Доступні планети:",
+    encyclopedia.availablePlanets
+  );
+
+  await savePlanets();
+
+  alert(`Планету "${planet.name}" успішно додано!`);
 }
 
 // =====================================================
@@ -692,7 +776,21 @@ async function confirmDelete() {
     return;
   }
 
+  // Зберігаємо планету перед видаленням
+  const deletedPlanet = planets[index];
+
+  console.log("Видаляємо планету:", deletedPlanet);
+
+  // Видаляємо з відображення
   planets.splice(index, 1);
+
+  // Повертаємо планету назад у список доступних
+  encyclopedia.availablePlanets.push(deletedPlanet);
+
+  console.log(
+    "Доступні планети після видалення:",
+    encyclopedia.availablePlanets
+  );
 
   await savePlanets();
 

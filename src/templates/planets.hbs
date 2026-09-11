@@ -3,17 +3,27 @@
 </h2>
 
 <form class="create-planet-form">
-  <input
-    class="planet-name"
-    type="text"
-    placeholder="Назва планети"
-    autocomplete="off"
-    required
-  />
 
-  <button type="submit">
-    Додати
+  <select class="planet-select">
+    <option value="">Оберіть планету з бази</option>
+  </select>
+
+  <button type="button" class="add-available-planet-btn">
+    Додати з бази
   </button>
+
+  <input 
+    class="planet-name" 
+    type="text" 
+    placeholder="Назва нової планети" 
+    autocomplete="off" 
+    required 
+  /> 
+ 
+  <button type="submit"> 
+    Створити нову 
+  </button> 
+
 </form>
 
 <input
