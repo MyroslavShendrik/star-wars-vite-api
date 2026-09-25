@@ -1152,3 +1152,12 @@
   transform: translateY(-2px);
   box-shadow: 0 0 14px rgba(255, 215, 0, 0.4);
 }
+
+.planet-card img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}

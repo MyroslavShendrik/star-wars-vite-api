@@ -34,6 +34,10 @@ async function getPlanets() {
     encyclopedia = data.encyclopedia;
     planets = encyclopedia.planets || [];
 
+planets.sort((a, b) =>
+  a.name.localeCompare(b.name)
+);
+
     console.log("Планети:", planets);
 
     renderPlanets();
@@ -208,6 +212,10 @@ async function handleAddAvailablePlanet() {
     encyclopedia.availablePlanets.filter(
       (item) => Number(item.id) !== Number(selectedId)
     );
+
+planets.sort((a, b) =>
+  a.name.localeCompare(b.name)
+);
 
   console.log("Планети:", planets);
   console.log(
